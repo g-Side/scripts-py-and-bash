@@ -18,7 +18,7 @@ def limpar_clientes_antigos():
     try:
         itens = os.listdir(pasta_clientes)
     except FileNotFoundError:
-        print(f"Erro: o diretório '{pasta_clientes}' não foi encontrado.")
+        print(f'Erro: o diretório {pasta_clientes} não foi encontrado')
     print('-' * 30)
     print(f'BUscando itens na pasta {pasta_clientes}...')
     print('-' * 30)

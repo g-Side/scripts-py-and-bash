@@ -34,7 +34,7 @@ def limpar_clientes_antigos():
     try:
         itens = os.listdir(pasta_clientes)
         print('-' * 30)
-        print(f'Buscando itens na pasta de clientes...')
+        print('Buscando itens na pasta de clientes...')
         print('-' * 30)
         sp(5)
         for i in itens:

@@ -1,7 +1,8 @@
 import os
 
 """
-1.DEFINIR PASTA ONDE ELE VAI TRABALHAR
+1.DEFINIR PASTA ONDE ELE VAI TRABALHAR - OK
+
 2.FAZER A BUSCA E FILTRO DAS PASTAS QUE CONTENHAM "EXCLUIR_" NO NOME
 3.ADICIONAR NUMA LISTA ESSES NOMES DE PASTAS
 4.REMOVER OS ITENS
@@ -9,10 +10,14 @@ import os
 6.REMOVER DO SITES-ENABLE E DAR UM REFRESH NO APACHE2
 """
 """DECLARAÇÃO DAS VARIAVEIS"""
-caminho_pastas = '/var/www/'
+pasta_clientes = '/var/www/'
+filtrados_excluir = []
 
-def limpar_pastas():
-    excluir_itens = os.listdir(caminho_pastas)
-    print(excluir_itens)
-limpar_pastas()
+def limpar_clientes_antigos():
+    itens = os.listdir(pasta_clientes)
+    for cliente in itens:
+        if cliente == 'EXCLUIR_*':
+            filtrados_excluir.append()
+            print(filtrados_excluir)
+limpar_clientes_antigos()
 

@@ -16,8 +16,8 @@ filtrados_excluir = []
 def limpar_clientes_antigos():
     itens = os.listdir(pasta_clientes)
     for cliente in itens:
-        if cliente == 'EXCLUIR_*':
-            filtrados_excluir.append()
+        if cliente.startswith(EXCLUIR_):
+            filtrados_excluir.append(cliente)
             print(filtrados_excluir)
 limpar_clientes_antigos()
 

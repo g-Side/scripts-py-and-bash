@@ -5,7 +5,7 @@ import itertools
 from time import sleep
 
 '''Caminho para buscar a planilha'''
-path_planilha = Path('/usr/share/limpar_arquivos')
+path_planilha = Path('/home/jean.alencar/scripts-py-and-bash/')
 
 '''Filtro dos arquivos que eu quero'''
 padrao_csv = '**/*.csv'
@@ -20,16 +20,14 @@ arquivo_xlsx = path_planilha.glob(padrao_xlsx)
 4. Adicionar log também para validação posterior e reter histórico.
 '''
 
-'''Perguntar ao usuário o nome do cliente'''
-cliente = str(input('Qual o nome do cliente?: '))
-
-cliente_midia = Path(f'/var/www/{cliente}/imageUpload/')
+cliente_midia = Path(f'/var/www/negreiros/imageUpload/')
 
 '''Verificar se a pasta existe'''
 if cliente_midia.is_dir():
     print(f'Cliente {cliente} selecionado.')
     sleep(3) 
     os.system(f'cd {cliente_midia}')
+    os.system('mkdir imagens-movidas')
 else:
     print(f'Cliente {cliente} não encontrado.')
 
@@ -56,7 +54,7 @@ imagens = data['imagens_del']
 def apagar_imagens():
     try: 
         for i in imagens:
-            os.system(f'mv {cliente_midia}{i} pasta-teste/')
+            os.system(f'mv {cliente_midia}{i} imagens-movidas/')
             print(f'o item {i} movido')
     except:
         print('Erro ao executar script.')

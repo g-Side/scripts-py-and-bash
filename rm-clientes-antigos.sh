@@ -8,7 +8,7 @@ CLIENTES_EXCLUIR=$(ls -la /var/www | grep "EXCLUIR*")
 #FORMATANDO DATA
 DATE=$(date +'%Y/%m/%d-%H:%M')
 #DEFININDO ARQUIVO DE LOG E CRIANDO. CASO JÁ EXISTA NÃO FAZ NADA
-ARQUIVO_LOG=/var/log/clientes_excluidos_pro.txt
+ARQUIVO_LOG="/var/log/clientes_excluidos_pro.txt"
 touch "$ARQUIVO_LOG" 2>/dev/null
 
 ### FUNÇÃO PARA ENVIAR A MENSAGEM AO DISCORD

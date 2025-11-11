@@ -24,7 +24,7 @@ LOG_APLICACAO() {
     }
 
 for cliente in CLIENTES_EXCLUIR ; do
-    if [[ "$cliente" == "EXCLUIR"* ]]; then
+    if [[ "$cliente" == "EXCLUIR" ]]; then
         echo "Encontrado o cliente $cliente para excluir"
         #########COMENTADO PARA TESTE
         ##rm -Rf $cliente

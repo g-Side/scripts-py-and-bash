@@ -14,4 +14,5 @@ caminho_pastas = '/var/www/'
 def limpar_pastas():
     excluir_itens = os.listdir(caminho_pastas)
     print(excluir_itens)
+limpar_pastas()
 

@@ -24,9 +24,9 @@ def limpar_clientes_antigos():
     print('-' * 30)
     sp(15)
 
-    for cliente in itens:
-        if cliente.startswith('EXCLUIR_'):
-            filtrados_excluir.append(cliente)
+    for i in itens:
+        if i.startswith('EXCLUIR_'):
+            filtrados_excluir.append(i)
             print(f'- {filtrados_excluir}')
 limpar_clientes_antigos()
 

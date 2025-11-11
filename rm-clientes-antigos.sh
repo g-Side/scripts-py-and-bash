@@ -8,8 +8,8 @@ CLIENTES_EXCLUIR=$(ls -la /var/www | grep "EXCLUIR*")
 #FORMATANDO DATA
 DATE=$(date +'%Y/%m/%d-%H:%M')
 #DEFININDO ARQUIVO DE LOG E CRIANDO. CASO JÁ EXISTA NÃO FAZ NADA
-ARQUIVO_LOG="/var/log/clientes_excluidos_pro.txt"
-touch "$ARQUIVO_LOG" 2>/dev/null
+touch /var/log/clientes_excluidos_pro.txt 2>/dev/null
+ARQUIVO_LOG=/var/log/clientes_excluidos_pro.txt
 
 ### FUNÇÃO PARA ENVIAR A MENSAGEM AO DISCORD
 NOTIFICA_DISCORD() {
@@ -24,7 +24,7 @@ LOG_APLICACAO() {
     }
 
 for cliente in CLIENTES_EXCLUIR ; do
-    if [[ "$cliente" == "EXCLUIR" ]]; then
+    if [[] -n "$cliente" ]]; then
         echo "Encontrado o cliente $cliente para excluir"
         #########COMENTADO PARA TESTE
         ##rm -Rf $cliente

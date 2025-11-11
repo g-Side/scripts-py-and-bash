@@ -1,4 +1,5 @@
 import os
+from time import sleep as sp
 
 """
 1.DEFINIR PASTA ONDE ELE VAI TRABALHAR - OK
@@ -14,10 +15,18 @@ pasta_clientes = '/var/www/'
 filtrados_excluir = []
 
 def limpar_clientes_antigos():
-    itens = os.listdir(pasta_clientes)
+    try:
+        itens = os.listdir(pasta_clientes)
+    except FileNotFoundError:
+        print(f'Erro: o diretório {pasta_clientes} não foi encontrado.')
+    print('-' * 30)
+    print(f'BUscando itens na pasta {pasta_clientes}...')
+    print('-' * 30)
+    sp(15)
+
     for cliente in itens:
         if cliente.startswith('EXCLUIR_'):
             filtrados_excluir.append(cliente)
-            print(filtrados_excluir)
+            print(f'- {filtrados_excluir}')
 limpar_clientes_antigos()
 

@@ -31,7 +31,5 @@ for cliente in CLIENTES_EXCLUIR ; do
         LOG_APLICACAO
         MSG=":rotating_light: $cliente foi removido do servidor PRO automaticamente em: $DATE"
         NOTIFICA_DISCORD
-    else
-        nothing
     fi
 done

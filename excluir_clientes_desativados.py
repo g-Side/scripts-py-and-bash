@@ -2,27 +2,26 @@ import os
 import datetime as dt
 from time import sleep as sp 
 
-"""
-6.REMOVER DO SITES-ENABLE E DAR UM REFRESH NO APACHE2
-"""
 
-"""DECLARAÇÃO DAS VARIAVEIS
----PASTA DE TRABALHO DO SCRIPT:
-"""
+#6.REMOVER DO SITES-ENABLE E DAR UM REFRESH NO APACHE2
+
+
+#DECLARAÇÃO DAS VARIAVEIS
+#---PASTA DE TRABALHO DO SCRIPT:
 pasta_clientes = '/var/www/'
 
-"""LISTA DOS ITENS PARA EXCLUIR"""
+#LISTA DOS ITENS PARA EXCLUIR
 filtrados_excluir = []
 
-"""CONFIGURANDO A DATA"""
+#CONFIGURANDO A DATA
 data_atual = dt.datetime.now()
 data = data_atual.strftime("%Y-%m-%d")
 
-"""ARQUIVO DE LOG:
-arquivo_log = '/var/log/clientes_excluidos.txt'
-with open(arquivo_log , 'a') as log:
-    log.write(f'Data: {data}')
-"""
+#ARQUIVO DE LOG:
+#arquivo_log = '/var/log/clientes_excluidos.txt'
+#with open(arquivo_log , 'a') as log:
+#    log.write(f'Data: {data}')
+
 
 def limpar_clientes_antigos():
     try:

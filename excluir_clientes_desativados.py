@@ -40,7 +40,7 @@ def limpar_clientes_antigos():
             if i.startswith('EXCLUIR_'):
                 filtrados_excluir.append(i)
                 ultimo_item = filtrados_excluir[-1]
-                print(f'{DATE} - {ultimo_item} foi excluido.')
+                """print(f'{DATE} - {ultimo_item} foi excluido.')"""
                 log.write(f'{DATE} - {ultimo_item} foi excluido.')
     except FileNotFoundError:
         print(f'Erro: o diretório não foi encontrado')

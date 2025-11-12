@@ -21,8 +21,9 @@ data = data_atual.strftime("%Y-%m-%d")
 """ARQUIVO DE LOG:
 arquivo_log = '/var/log/clientes_excluidos.txt'
 with open(arquivo_log , 'a') as log:
-    log.write(f'Data: {data}')"""
-    
+    log.write(f'Data: {data}')
+"""
+
 def limpar_clientes_antigos():
     try:
         itens = os.listdir(pasta_clientes)

@@ -25,9 +25,9 @@ data = data_atual.strftime("%Y-%m-%d")
 def limpar_clientes_antigos():
     try:
         itens = os.listdir(pasta_clientes)
-        print('-' * 30)
+        print('-' * 50)
         print('Buscando itens na pasta de clientes...')
-        print('-' * 30)
+        print('-' * 50)
         sp(5)
         for i in itens:
             if i.startswith('EXCLUIR_'):

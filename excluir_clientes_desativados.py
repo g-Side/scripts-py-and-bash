@@ -32,11 +32,10 @@ def limpar_clientes_antigos():
         for i in itens:
             if i.startswith('EXCLUIR_'):
                 filtrados_excluir.append(i)
-                # ultimo_item = filtrados_excluir[-1]
-                
+                ultimo_item = filtrados_excluir[-1]
+                print(ultimo_item)
                 # LINHA ONDE O ERRO ESTÁ SENDO REPORTADO:
                 #print(f'{data} - {filtrados_excluir[-1]} foi excluido.')
-                
                 # print(f'{data} - {ultimo_item} foi excluido.')
                 # log.write(f'{data} - {ultimo_item} foi excluido.')
                 

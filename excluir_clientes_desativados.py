@@ -27,7 +27,7 @@ def limpar_clientes_antigos():
                 filtrados_excluir.append(i)
                 ultimo_item = filtrados_excluir[-1]
                 print(ultimo_item)
-                teste = data + "teste log."
+                teste = data + "teste log. \n"
                 with open(arquivo_log , 'a') as log:
                     log.write(teste)
                 with open (arquivo_log) as f:

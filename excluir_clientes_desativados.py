@@ -27,7 +27,7 @@ with open(arquivo_log, 'a') as log:
 
 """CONFIGURANDO A DATA"""
 data_atual = dt.datetime.now()
-DATE = data_atual.strftime("%Y-%m-%d")
+date = data_atual.strftime("%Y-%m-%d")
     
 def limpar_clientes_antigos():
     try:
@@ -39,9 +39,10 @@ def limpar_clientes_antigos():
         for i in itens:
             if i.startswith('EXCLUIR_'):
                 filtrados_excluir.append(i)
-                ultimo_item = filtrados_excluir[-1]
-                """print(f'{DATE} - {ultimo_item} foi excluido.')"""
-                log.write(f'{DATE} - {ultimo_item} foi excluido.')
+                """ultimo_item = filtrados_excluir[-1]"""
+                print(f'{date} - {filtrados_excluir[-1]} foi excluido.')
+                """print(f'{date} - {ultimo_item} foi excluido.')"""
+                """log.write(f'{date} - {ultimo_item} foi excluido.')"""
     except FileNotFoundError:
         print(f'Erro: o diretório não foi encontrado')
 limpar_clientes_antigos()

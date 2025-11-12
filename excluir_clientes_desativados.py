@@ -29,7 +29,7 @@ def limpar_clientes_antigos():
                 ultimo_item = filtrados_excluir[-1]
                 print(ultimo_item)
                 # ARQUIVO DE LOG (Comentado):
-                arquivo_log = '/var/log/clientes_excluidos.txt'
+                arquivo_log = "/var/log/clientes_excluidos.txt"
                 with open(arquivo_log , 'a') as log:
                     log.write(f'Data: {data} teste log.')
                 # shutil.rmtree(ultimo_item)

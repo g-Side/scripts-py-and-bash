@@ -31,7 +31,7 @@ def limpar_clientes_antigos():
                 # ARQUIVO DE LOG (Comentado):
                 arquivo_log = "/var/log/clientes_excluidos.txt"
                 with open(arquivo_log , 'a') as log:
-                    log.write(f'Data: {data} teste log.')
+                    log.write(f'{data} teste log.\n')
                 # shutil.rmtree(ultimo_item)
                 # print(f'{ultimo_item} foi removido')
 

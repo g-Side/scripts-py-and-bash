@@ -27,9 +27,10 @@ def limpar_clientes_antigos():
                 filtrados_excluir.append(i)
                 ultimo_item = filtrados_excluir[-1]
                 print(ultimo_item)
-                teste = ""+data+" teste log."
-                with open('arquivo_log' , 'a') as log:
+                teste = data + "teste log."
+                with open(arquivo_log , 'a') as log:
                     log.write(teste)
+                    print(log.read())
                 # shutil.rmtree(ultimo_item)
                 # print(f'{ultimo_item} foi removido')
 

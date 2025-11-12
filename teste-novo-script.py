@@ -41,6 +41,6 @@ def limpar_clientes_antigos():
                 # log.write(f'{data} - {ultimo_item} foi excluido.')
                 
     except FileNotFoundError:
-        print(f'Erro: o diretório não foi encontrado')
+        print('Erro: o diretório não foi encontrado')
         
 limpar_clientes_antigos()

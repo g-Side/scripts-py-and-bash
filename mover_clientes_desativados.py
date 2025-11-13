@@ -32,6 +32,7 @@ def limpar_clientes_antigos():
                 ultimo_item = filtrados_excluir[-1]+'/'
                 print(ultimo_item)
                 path_completo = pasta_clientes+ultimo_item
+                print(path_completo)
                 shutil.move(path_completo, pasta_excluir)
                 print(ultimo_item + ' foi movido para: '+pasta_excluir)
                 #GERENCIAMENTO DO LOG

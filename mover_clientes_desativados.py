@@ -41,4 +41,6 @@ def limpar_clientes_antigos():
                     log.write(logar)
     except FileNotFoundError:
         print('Erro: o diretório não foi encontrado')
+    except PermissionError:
+        print('Erro: Falta de permissão ao rodar o script.')
 limpar_clientes_antigos()

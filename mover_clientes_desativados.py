@@ -4,8 +4,8 @@ import shutil
 
 # DECLARAÇÃO DAS VARIAVEIS
 # --- PASTA DE TRABALHO DO SCRIPT:
-pasta_clientes = '/home/jean/teste-script/'
-pasta_excluir = '/home/jean/teste-script/excluir'
+pasta_clientes = '/var/www'
+pasta_excluir = '/var/www/excluir'
 
 # CRIAR PASTA SE NÃO EXISTIR
 os.makedirs(pasta_excluir, exist_ok=True)
@@ -15,7 +15,7 @@ data_atual = dt.datetime.now()
 data = data_atual.strftime("%Y-%m-%d")
 
 # ARQUIVO DE LOG (Comentado):
-arquivo_log = '/home/jean/teste-script/excluir/clientes_excluidos.txt'
+arquivo_log = '/var/www/excluir/clientes_movidos.txt'
 
 # LISTA DOS ITENS PARA EXCLUIRk
 filtrados_excluir = []

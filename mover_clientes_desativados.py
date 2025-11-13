@@ -5,7 +5,7 @@ import shutil
 # DECLARAÇÃO DAS VARIAVEIS
 # --- PASTA DE TRABALHO DO SCRIPT:
 pasta_clientes = '/var/www'
-pasta_excluir = '/var/www/excluir'
+pasta_excluir = '/var/www/excluir/'
 
 # CRIAR PASTA SE NÃO EXISTIR
 os.makedirs(pasta_excluir, exist_ok=True)

@@ -4,7 +4,7 @@ import shutil
 
 # DECLARAÇÃO DAS VARIAVEIS
 # --- PASTA DE TRABALHO DO SCRIPT:
-pasta_clientes = '/var/www'
+pasta_clientes = '/var/www/'
 pasta_excluir = '/var/www/excluir/'
 
 # CRIAR PASTA SE NÃO EXISTIR

@@ -33,9 +33,9 @@ def limpar_clientes_antigos():
                 print(ultimo_item)
                 path_completo = pasta_clientes+ultimo_item
                 shutil.move(path_completo, pasta_excluir)
-                print(f'{ultimo_item}foi movido para: {pasta_excluir}')
+                print(ultimo_item + ' foi movido para: '+pasta_excluir)
                 #GERENCIAMENTO DO LOG
-                logar = f'{data} {ultimo_item} foi movido para {pasta_excluir} \n'
+                logar = data + ultimo_item + 'foi movido.'
                 with open(arquivo_log , 'a') as log:
                     log.write(logar)
     except FileNotFoundError:

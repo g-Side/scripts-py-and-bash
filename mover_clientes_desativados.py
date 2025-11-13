@@ -5,18 +5,20 @@ import shutil
 # DECLARAÇÃO DAS VARIAVEIS
 # --- PASTA DE TRABALHO DO SCRIPT:
 pasta_clientes = '/home/jean/teste-script/'
+pasta_excluir = '/home/jean/teste-script/excluir'
+
+# CRIAR PASTA SE NÃO EXISTIR
+os.makedirs(pasta_excluir, exist_ok=True)
 
 # CONFIGURANDO A DATA
 data_atual = dt.datetime.now()
 data = data_atual.strftime("%Y-%m-%d")
 
 # ARQUIVO DE LOG (Comentado):
-arquivo_log = '/home/jean/teste-script/clientes_excluidos.txt'
+arquivo_log = '/home/jean/teste-script/excluir/clientes_excluidos.txt'
 
 # LISTA DOS ITENS PARA EXCLUIRk
 filtrados_excluir = []
-
-
 
 def limpar_clientes_antigos():
     try:
@@ -30,10 +32,10 @@ def limpar_clientes_antigos():
                 ultimo_item = filtrados_excluir[-1]+'/'
                 print(ultimo_item)
                 path_completo = pasta_clientes+ultimo_item
-                shutil.rmtree(path_completo)
-                print(f'{ultimo_item}foi removido')
+                shutil.move(path_completo, pasta_excluir)
+                print(f'{ultimo_item}foi movido para: {pasta_excluir}')
                 #GERENCIAMENTO DO LOG
-                logar = data + ultimo_item + ' foi removido \n'
+                logar = f'{data} {ultimo_item} foi movido para {pasta_excluir} \n'
                 with open(arquivo_log , 'a') as log:
                     log.write(logar)
     except FileNotFoundError:

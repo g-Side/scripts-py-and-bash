@@ -1,61 +1,33 @@
 import pandas as pd
 import os
 from pathlib import Path
-import itertools
 from time import sleep
 
 '''Caminho para buscar a planilha'''
-path_planilha = Path('/home/jean.alencar/scripts-py-and-bash/')
-
-'''Filtro dos arquivos que eu quero'''
-padrao_csv = '**/*.csv'
-padrao_xlsx = '**/*.xlsx'
-
-'''Busca recursiva dos arquivos de planilha'''
-arquivo_csv = path_planilha.glob(padrao_csv)
-arquivo_xlsx = path_planilha.glob(padrao_xlsx)
-
-'''
----TAREFAS PARA O SCRIPT---
-4. Adicionar log também para validação posterior e reter histórico.
-'''
-
-cliente_midia = Path(f'/var/www/negreiros/imageUpload/')
+planilha = "/var/www/negreiros/imageUpload-bkp/scripts-py-and-bash/mover-imagens.py"
+cliente_midia = Path('/var/www/negreiros/imageUpload-bkp/')
 
 '''Verificar se a pasta existe'''
-if cliente_midia.is_dir():
-    print(f'Cliente {cliente} selecionado.')
-    sleep(3) 
-    os.system(f'cd {cliente_midia}')
+if not cliente_midia.is_dir():
+    print('Cliente não encontrado.')
+    exit
+else:
+    print('Cliente selecionado.')
     os.system('mkdir imagens-movidas')
-else:
-    print(f'Cliente {cliente} não encontrado.')
-
-'''Match dos arquivos
-melhorar a forma de encontrar a planilha, ver de passar o caminho da planilha 
-ou alguma outra forma
-'''
-planilha_filtrada = itertools.chain(arquivo_csv, arquivo_xlsx)
-
-'''Valida se a planilha foi encontrada'''
-if planilha_filtrada:
-    print(f'Arquivo encontrado.')
-    sleep(3)
-else:
-    print(f'Planilha não encontrada em: {path_planilha}')
 
 '''Importar a planilha pro programa'''
-data = pd.read_csv(planilha_filtrada)
-
+data = pd.read_csv(planilha)
+if not data.empty:
+    print('Importando dados para a remoção.')
 '''Busca pela coluna que eu quero'''
 imagens = data['imagens_del']
-
+print('Dados selecionados.')
 '''Função de apagar as imagens'''
 def apagar_imagens():
     try: 
         for i in imagens:
-            os.system(f'mv {cliente_midia}{i} imagens-movidas/')
-            print(f'o item {i} movido')
+            os.system('mv {} imagens-movidas/'.format(i))
+            print('o item {} movido'.format(i))
     except:
         print('Erro ao executar script.')
 apagar_imagens()

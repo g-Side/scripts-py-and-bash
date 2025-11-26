@@ -28,7 +28,7 @@ def apagar_imagens():
     try: 
         for i in imagens:
             #os.system('mv {} imagens-movidas/'.format(i))
-            print('o item {} movido'.format(i))
+            print('o item: {} foi encontrado e será movido.'.format(i))
     except:
         print('Erro ao executar script.')
 apagar_imagens()

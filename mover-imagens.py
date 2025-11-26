@@ -10,7 +10,7 @@ cliente_midia = Path('/var/www/negreiros/imageUpload-bkp/')
 '''Verificar se a pasta existe'''
 if not cliente_midia.is_dir():
     print('Cliente não encontrado.')
-    exit
+    exit()
 else:
     print('Pasta de backup selecionada.')
     os.system('mkdir imagens-movidas')
@@ -19,7 +19,7 @@ else:
 data = pd.read_csv(planilha)
 if not data.empty:
     print('Planilha vazia. Verifique o conteudo')
-    exit
+    exit()
 else:
     imagens = data['imagens_del']
     print('Dados carregados.')

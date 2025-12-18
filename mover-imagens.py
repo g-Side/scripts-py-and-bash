@@ -4,8 +4,9 @@ from pathlib import Path
 from time import sleep
 
 '''Caminho para buscar a planilha'''
-planilha = "/home/jean.alencar/scripts-py-and-bash/naousadas-bengala.csv"
-cliente_midia = Path('/var/www/bengala/imageUpload/')
+planilha = "/home/jean.alencar/scripts-py-and-bash/esperanca_excluir.csv"
+selecionar_cliente = input(str('Qual o nome do cliente? '))
+cliente_midia = Path(f'/var/www/{selecionar_cliente}/imageUpload/')
 imagens_movidas = Path('/home/jean.alencar/scripts-py-and-bash/imagens-movidas/')
 
 '''Verificar se a pasta existe'''

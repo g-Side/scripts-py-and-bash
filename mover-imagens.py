@@ -7,7 +7,7 @@ from time import sleep
 planilha = "/home/jean.alencar/scripts-py-and-bash/esperanca_excluir.csv"
 selecionar_cliente = input(str('Qual o nome do cliente? '))
 cliente_midia = Path(f'/var/www/{selecionar_cliente}/imageUpload/')
-imagens_movidas = Path('/home/jean.alencar/scripts-py-and-bash/imagens-movidas/')
+imagens_movidas = Path(f'/home/jean.alencar/scripts-py-and-bash/imagens-movidas-{selecionar_cliente}/')
 
 '''Verificar se a pasta existe'''
 if not cliente_midia.is_dir():

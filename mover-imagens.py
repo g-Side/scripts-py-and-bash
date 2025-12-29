@@ -4,7 +4,7 @@ from pathlib import Path
 from time import sleep
 
 '''Caminho para buscar a planilha'''
-planilha = "/home/jean.alencar/scripts-py-and-bash/esperanca_excluir.csv"
+planilha = "/home/jean.alencar/scripts-py-and-bash/davp-naousadas-v2.csv"
 selecionar_cliente = input(str('Qual o nome do cliente? '))
 cliente_midia = Path(f'/var/www/{selecionar_cliente}/imageUpload/')
 imagens_movidas = Path(f'/home/jean.alencar/scripts-py-and-bash/imagens-movidas-{selecionar_cliente}/')
